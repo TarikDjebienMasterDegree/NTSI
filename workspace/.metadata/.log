@@ -1,0 +1,54 @@
+
+!ENTRY org.eclipse.mylyn.tasks.core 4 0 2012-10-02 12:33:59.701
+!MESSAGE Could not write: /home/m2mfafc/djebien/Bureau/NTSI/workspace/.metadata/.mylyn/repositories.xml.zip
+!STACK 0
+java.io.IOException: Aucun fichier ou dossier de ce type
+	at java.io.UnixFileSystem.createFileExclusively(Native Method)
+	at java.io.File.createNewFile(File.java:900)
+	at org.eclipse.mylyn.internal.tasks.core.TaskRepositoriesExternalizer.writeRepositoriesToXML(TaskRepositoriesExternalizer.java:52)
+	at org.eclipse.mylyn.internal.tasks.core.TaskRepositoryManager.saveRepositories(TaskRepositoryManager.java:422)
+	at org.eclipse.mylyn.internal.tasks.core.RepositoryExternalizationParticipant.save(RepositoryExternalizationParticipant.java:77)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.AbstractExternalizationParticipant.execute(AbstractExternalizationParticipant.java:70)
+	at org.eclipse.mylyn.internal.tasks.core.externalization.ExternalizationManager$ExternalizationJob.run(ExternalizationManager.java:222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.ui.ide 4 4 2012-10-02 12:34:00.896
+!MESSAGE Problems saving workspace
+
+!ENTRY org.eclipse.ui.ide 4 1 2012-10-02 12:34:00.897
+!MESSAGE Problems occurred while trying to save the state of the workbench.
+!SUBENTRY 1 org.eclipse.core.resources 4 568 2012-10-02 12:34:00.897
+!MESSAGE Could not write workspace metadata '/home/m2mfafc/djebien/Bureau/NTSI/workspace/.metadata/.plugins/org.eclipse.core.resources/.root/1.tree'.
+!STACK 0
+java.io.IOException: Erreur d'entrée/sortie
+	at java.io.FileOutputStream.close0(Native Method)
+	at java.io.FileOutputStream.close(FileOutputStream.java:341)
+	at java.io.FilterOutputStream.close(FilterOutputStream.java:160)
+	at org.eclipse.core.internal.localstore.SafeFileOutputStream.close(SafeFileOutputStream.java:64)
+	at java.io.FilterOutputStream.close(FilterOutputStream.java:160)
+	at org.eclipse.core.internal.resources.SaveManager.saveTree(SaveManager.java:1354)
+	at org.eclipse.core.internal.resources.SaveManager.save(SaveManager.java:1134)
+	at org.eclipse.core.internal.resources.Workspace.save(Workspace.java:2375)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor$5.run(IDEWorkbenchAdvisor.java:508)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:121)
+
+!ENTRY org.eclipse.equinox.preferences 4 4 2012-10-02 12:34:00.914
+!MESSAGE Exception saving preferences to: /home/m2mfafc/djebien/Bureau/NTSI/workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs.
+!STACK 0
+java.io.FileNotFoundException: /home/m2mfafc/djebien/Bureau/NTSI/workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs (Aucun fichier ou dossier de ce type)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:209)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:160)
+	at org.eclipse.core.internal.preferences.SafeFileOutputStream.<init>(SafeFileOutputStream.java:43)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.write(EclipsePreferences.java:317)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.save(EclipsePreferences.java:1128)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.save(EclipsePreferences.java:1104)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:465)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.flush(EclipsePreferences.java:429)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.flush(PreferenceForwarder.java:797)
+	at org.eclipse.core.runtime.Plugin$2.run(Plugin.java:409)
+	at org.eclipse.core.runtime.Plugin.savePluginPreferences(Plugin.java:416)
+	at org.eclipse.ui.internal.ActivityPersistanceHelper.saveEnabledStates(ActivityPersistanceHelper.java:285)
+	at org.eclipse.ui.internal.ActivityPersistanceHelper.shutdown(ActivityPersistanceHelper.java:297)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:2709)
+	at org.eclipse.ui.internal.Workbenc

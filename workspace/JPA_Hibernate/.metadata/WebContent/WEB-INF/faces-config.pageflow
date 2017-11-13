@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13552241881386" configfile="/JPA_Hibernate/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="add" id="pf13552242778807" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf13552242778808" path="/add.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="list" id="pf13552242778809" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf135522427788010" inlinks="pf13552242778808 pf135522427788011" path="/list.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="edit" id="pf135522427788012" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf135522427788011" inlinks="pf135522427788010" path="/edit.jsp"/>
+  <links id="pf13552242778808" target="pf13552242778809" source="pf13552242778807" outcome="list" redirect="true"/>
+  <links id="pf135522427788010" target="pf135522427788012" source="pf13552242778809" outcome="edit" redirect="true"/>
+  <links id="pf135522427788011" target="pf13552242778809" source="pf135522427788012" outcome="update" redirect="true"/>
+</pageflow:Pageflow>

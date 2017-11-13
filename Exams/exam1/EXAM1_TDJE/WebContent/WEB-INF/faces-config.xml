@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+    
+    <application>
+    	<locale-config>
+    		<default-locale>fr</default-locale>
+    		<supported-locale>en</supported-locale>
+    	</locale-config>
+    	<resource-bundle>
+    		<base-name>resources.application.Message</base-name>
+    		<var>msg</var>
+    	</resource-bundle>
+    </application>
+    
+    <managed-bean>
+    	<managed-bean-name>loginManagedBean</managed-bean-name>
+    	<managed-bean-class>managedBean.Login</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>ObjetsManagedBean</managed-bean-name>
+    	<managed-bean-class>managedBean.Objets</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+    	<managed-bean-name>echangeBean</managed-bean-name>
+    	<managed-bean-class>managedBean.Echange</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+    	<from-view-id>/login.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>LoginSuccess</from-outcome>
+    		<to-view-id>/success.jsp</to-view-id>
+    	</navigation-case>
+    	<navigation-case>
+    		<from-outcome>LoginError</from-outcome>
+    		<to-view-id>/error.jsp</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+
+</faces-config>

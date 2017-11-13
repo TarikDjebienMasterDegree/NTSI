@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+    
+    <managed-bean>
+    	<managed-bean-name>CustomerController</managed-bean-name>
+    	<managed-bean-class>controller.CustomerController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+    	<managed-bean-name>MechanicController</managed-bean-name>
+    	<managed-bean-class>controller.MechanicController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+    	<managed-bean-name>AppointmentController</managed-bean-name>
+    	<managed-bean-class>controller.AppointmentController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+    	<display-name>addCustomer</display-name>
+    	<from-view-id>/jsp/addCustomer.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>listCustomers</from-outcome>
+    		<to-view-id>/jsp/listCustomers.jsp</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<display-name>addMechanic</display-name>
+    	<from-view-id>/jsp/addMechanic.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>listMechanics</from-outcome>
+    		<to-view-id>/jsp/listMechanics.jsp</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/listCustomers.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>editCustomer</from-outcome>
+    		<to-view-id>/jsp/editCustomer.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/editCustomer.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>updateCustomer</from-outcome>
+    		<to-view-id>/jsp/listCustomers.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/Screen1CreateAppointment.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>goToStep2</from-outcome>
+    		<to-view-id>/jsp/Screen2CreateAppointment.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/Screen2CreateAppointment.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>goToStep3</from-outcome>
+    		<to-view-id>/jsp/Screen3CreateAppointment.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/Screen3CreateAppointment.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>goToStep4</from-outcome>
+    		<to-view-id>/jsp/Screen4CreateAppointment.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/Screen4CreateAppointment.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>goToStep5</from-outcome>
+    		<to-view-id>/jsp/Screen5CreateAppointment.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/Screen5CreateAppointment.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>goToHome</from-outcome>
+    		<to-view-id>/index.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <converter>
+		<converter-id>customerConverter</converter-id>
+		<converter-class>converter.CustomerConverter</converter-class>
+	</converter>
+
+</faces-config>

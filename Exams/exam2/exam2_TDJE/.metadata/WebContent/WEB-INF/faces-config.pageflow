@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf135582162617320" configfile="/exam2_TDJE/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="addTeacher" x="122" y="178" id="pf135582168571421" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf135582168571422" path="/jsp/addTeacher.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/listTeachers" x="338" y="562" id="pf135582168571423" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf135582172575324" inlinks="pf135582168571422 pf135582175661526" path="/jsp/listTeachers.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/editTeacher" x="122" y="562" id="pf135582172575325" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf135582175661526" inlinks="pf135582172575324" path="/jsp/editTeacher.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addStudent" x="122" y="946" id="pf135582473486727" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf135582473486728" path="/jsp/addStudent.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/listStudents" x="338" y="946" id="pf135582473486829" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf135582473486728" path="/jsp/listStudents.jsp"/>
+  <links id="pf135582168571422" target="pf135582168571423" source="pf135582168571421" outcome="listTeachers"/>
+  <links id="pf135582172575324" target="pf135582172575325" source="pf135582168571423" outcome="editTeacher" redirect="true"/>
+  <links id="pf135582175661526" target="pf135582168571423" source="pf135582172575325" outcome="updateTeacher" redirect="true"/>
+  <links id="pf135582473486728" target="pf135582473486829" source="pf135582473486727" outcome="listStudents"/>
+</pageflow:Pageflow>

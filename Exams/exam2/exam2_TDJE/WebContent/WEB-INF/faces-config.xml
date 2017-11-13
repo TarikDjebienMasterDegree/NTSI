@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+    
+    <managed-bean>
+    	<managed-bean-name>TeacherController</managed-bean-name>
+    	<managed-bean-class>controller.TeacherController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+    	<managed-bean-name>StudentController</managed-bean-name>
+    	<managed-bean-class>controller.StudentController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+    	<managed-bean-name>BookingController</managed-bean-name>
+    	<managed-bean-class>controller.BookingController</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <navigation-rule>
+    	<display-name>addTeacher</display-name>
+    	<from-view-id>/jsp/addTeacher.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>listTeachers</from-outcome>
+    		<to-view-id>/jsp/listTeachers.jsp</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<display-name>addStudent</display-name>
+    	<from-view-id>/jsp/addStudent.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>listStudents</from-outcome>
+    		<to-view-id>/jsp/listStudents.jsp</to-view-id>
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/listTeachers.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>editTeacher</from-outcome>
+    		<to-view-id>/jsp/editTeacher.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/editTeacher.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>updateTeacher</from-outcome>
+    		<to-view-id>/jsp/listTeachers.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/Screen1CreateBooking.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>goToStep2</from-outcome>
+    		<to-view-id>/jsp/Screen2CreateBooking.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/Screen2CreateBooking.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>goToStep3</from-outcome>
+    		<to-view-id>/jsp/Screen3CreateBooking.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/Screen3CreateBooking.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>goToStep4</from-outcome>
+    		<to-view-id>/jsp/Screen4CreateBooking.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/Screen4CreateBooking.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>goToStep5</from-outcome>
+    		<to-view-id>/jsp/Screen5CreateBooking.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+    	<from-view-id>/jsp/Screen5CreateBooking.jsp</from-view-id>
+    	<navigation-case>
+    		<from-outcome>goToHome</from-outcome>
+    		<to-view-id>/index.jsp</to-view-id>
+    		<redirect />
+    	</navigation-case>
+    </navigation-rule>
+    
+    <converter>
+		<converter-id>teacherConverter</converter-id>
+		<converter-class>converter.TeacherConverter</converter-class>
+	</converter>
+	
+	<converter>
+		<converter-id>classRoomConverter</converter-id>
+		<converter-class>converter.ClassroomConverter</converter-class>
+	</converter>
+	
+	<converter>
+		<converter-id>studentConverter</converter-id>
+		<converter-class>converter.PersonConverter</converter-class>
+	</converter>
+
+</faces-config>

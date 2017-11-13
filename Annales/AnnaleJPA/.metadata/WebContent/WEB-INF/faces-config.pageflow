@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13556087669225" configfile="/AnnaleJPA/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="addCustomer" id="pf13557692645900" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13557692645901" path="/jsp/addCustomer.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/listCustomers" id="pf13557692645912" referenceLink="//@navigationRule.4/@navigationCase.0/@toViewId|" outlinks="pf13557692645913" inlinks="pf13557692645901 pf13557692645914" path="/jsp/listCustomers.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/editCustomer" id="pf13557692645915" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf13557692645914" inlinks="pf13557692645913" path="/jsp/editCustomer.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="addMechanic" id="pf13557694027836" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf13557694027837" path="/jsp/addMechanic.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/listMechanics" id="pf13557694027838" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf13557694027837" path="/jsp/listMechanics.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/Screen1CreateAppointment" id="pf13557801220919" referenceLink="//@navigationRule.5/@fromViewId|" outlinks="pf135578012209110" path="/jsp/Screen1CreateAppointment.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/Screen2CreateAppointment" id="pf135578012209211" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf135578014984312" inlinks="pf135578012209110" path="/jsp/Screen2CreateAppointment.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/Screen3CreateAppointment" id="pf135578014984313" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf135578022628814" inlinks="pf135578014984312" path="/jsp/Screen3CreateAppointment.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/Screen4CreateAppointment" id="pf135578022628815" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf135578022628816" inlinks="pf135578022628814" path="/jsp/Screen4CreateAppointment.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="jsp/Screen5CreateAppointment" id="pf135578022628817" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf135578033791918" inlinks="pf135578022628816" path="/jsp/Screen5CreateAppointment.jsp"/>
+  <nodes xsi:type="pageflow:PFPage" name="index" id="pf135578033791919" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf135578033791918" path="/index.jsp"/>
+  <links id="pf13557692645901" target="pf13557692645912" source="pf13557692645900" outcome="listCustomers"/>
+  <links id="pf13557692645913" target="pf13557692645915" source="pf13557692645912" outcome="editCustomer" redirect="true"/>
+  <links id="pf13557692645914" target="pf13557692645912" source="pf13557692645915" outcome="updateCustomer" redirect="true"/>
+  <links id="pf13557694027837" target="pf13557694027838" source="pf13557694027836" outcome="listMechanics"/>
+  <links id="pf135578012209110" target="pf135578012209211" source="pf13557801220919" outcome="goToStep2" redirect="true"/>
+  <links id="pf135578014984312" target="pf135578014984313" source="pf135578012209211" outcome="goToStep3" redirect="true"/>
+  <links id="pf135578022628814" target="pf135578022628815" source="pf135578014984313" outcome="goToStep4" redirect="true"/>
+  <links id="pf135578022628816" target="pf135578022628817" source="pf135578022628815" outcome="goToStep5" redirect="true"/>
+  <links id="pf135578033791918" target="pf135578033791919" source="pf135578022628817" outcome="goToHome" redirect="true"/>
+</pageflow:Pageflow>

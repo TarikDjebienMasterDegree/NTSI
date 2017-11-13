@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//WebContent/jsp/afficheCatalogueJSP.jsp=UTF-8
+encoding//src/servlet/AfficheProduit.java=UTF-8
+encoding//src/servlet/InitCatalogue.java=UTF-8
